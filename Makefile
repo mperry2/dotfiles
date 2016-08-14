@@ -84,4 +84,7 @@ perl: module-starter distzilla reply pause
 .PHONY: basic
 basic: bash inputrc dircolors vim xmodmap
 
+.PHONY: desktop
+desktop: xmodmap
+
 ## Makefile ends here
