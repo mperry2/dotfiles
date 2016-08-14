@@ -1,0 +1,6 @@
+lp1|winprint:\
+    :cm=Windows Network Printer:\
+    :lp=/dev/null:\
+    :sd=/home/perry81/spool/spool:\
+    :mx#0:\
+    :if=smbclient -k //itprintprod0001/571\ 1117\ \(Xerox\ WorkCentre\ 7535\) -c "print -" :

@@ -1,0 +1,30 @@
+# SYNOPSIS
+#   up number
+#
+# DESCRIPTION
+#   Without an argument, it will cd you up a directory; with a positive integer
+#   argument n it cd's you up n directories. I just got tired of typing things
+#   like "cd ../../../.." all the time. Note that I'm using bare cd rather than
+#   forcing the built in cd. This is so that if you have a cd function defined
+#   its functionality will be used.
+
+up() {
+    local count dir
+
+    if [ -z $1 ]; then
+        cd ..
+    elif [ $1 -gt 0 ] 2>/dev/null ; then
+        count=0
+        dir=''
+        while [ $count -lt $1 ]; do
+            dir=$dir"../"
+            ((++count))
+        done
+        cd "$dir"
+    else
+        echo "$FUNCNAME: Argument must be a positive integer"
+        return 2
+    fi
+}
+
+# vim:ft=sh

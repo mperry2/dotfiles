@@ -1,0 +1,11 @@
+# SYNOPSIS
+#   print-path
+#
+# DESCRIPTION
+#   Print the colon-separated entries from PATH with one entry per line.
+
+print-path() {
+    echo -e ${PATH//:/\\n}
+}
+
+# vim:ft=sh

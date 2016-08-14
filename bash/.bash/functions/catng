@@ -1,0 +1,11 @@
+# SYNOPSIS
+#   catng
+#
+# DESCRIPTION
+#   Display the netgroups in Active Directory
+
+catng () {
+    vastool search "(objectClass=nisNetgroup)" name nisNetgroupTriple
+}
+
+# vim:ft=sh

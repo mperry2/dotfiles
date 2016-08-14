@@ -1,0 +1,30 @@
+# Skip the startup message
+startup_message off
+
+# Look and feel
+caption always "%{= bb}%{+b w}%n %h %=%t %c "
+hardstatus alwayslastline "%-Lw%{= bW}%50>%n%f* %t%{-}%+Lw%<"
+
+termcap  vt100 'AF=\E[3%dm:AB=\E[4%dm'
+terminfo vt100 'AF=\E[3%p1%dm:AB=\E[4%p1%dm'
+
+# Start window numbering at 1, not 0.
+bind c screen 1
+bind ^c screen 1
+bind 0 select 10
+screen 1
+select 1
+
+# Configure function keys to switch between screens
+bindkey -k k1 select 1
+bindkey -k k2 select 2
+bindkey -k k3 select 3
+bindkey -k k4 select 4
+bindkey -k k5 select 5
+bindkey -k k6 select 6
+bindkey -k k7 select 7
+bindkey -k k8 select 8
+bindkey -k k9 select 9
+bindkey -k k; select 10
+bindkey -k F1 select 11
+bindkey -k F2 select 12

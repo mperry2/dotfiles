@@ -1,0 +1,69 @@
+# vim:noet:ts=8:sw=8
+
+[user]
+	name = Matt Perry
+	email = matt@mattperry.com
+[http]
+	sslVerify = false
+[pager]
+	pager = less -R
+[push]
+	default = simple
+[alias]
+	st = status
+	co = checkout
+	ci = commit
+	br = branch
+	df = diff
+	dfs = diff --staged
+	logg = log --graph --pretty=oneline --all --abbrev-commit --decorate
+	log0 = log --first-parent -m
+	show0 = show --first-parent -m
+	blame0 = blame --first-parent -m
+[credential]
+	helper = cache --timeout=28800
+[url "https://mperry2@github.com"]
+	insteadOf = https://github.com
+
+# You can set the color to any of the following values: normal, black, red,
+# green, yellow, blue, magenta, cyan, or white. If you want an attribute like
+# bold in the previous example, you can choose from bold, dim, ul (underline),
+# blink, and reverse (swap foreground and background).
+[color]
+	ui = auto
+[color "status"]
+	added = green bold
+	changed = red bold
+	untracked = cyan bold
+
+#[color]
+#	diff = auto
+#	status = auto
+#	branch = auto
+#	interactive = auto
+#	ui = true
+#	pager = true
+#[color "branch"]
+#	current = 120
+#	local = 115
+#	remote = 131
+#	upstream = white
+#	plain = white
+#[color "diff"]
+#	plain = white
+#	meta = 12 # light purple
+#	frag = 240 # dark gray
+#	old = 125 # light red
+#	new = 119 # light green
+#	commit = white
+#	whitespace = white
+#[color "interactive"]
+#[color "status"]
+#	header = white
+#	added = 119
+#	updated = 119
+#	changed = 130
+#	untracked = 240
+#	branch = 119
+#	nobranch = 240
+#	unmerged = 125

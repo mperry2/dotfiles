@@ -1,0 +1,11 @@
+# SYNOPSIS
+#   shownifconfig
+#
+# DESCRIPTION
+#   Decrypt and show the contents of ~/.nifconfig.ini.aes
+
+shownifconfig () {
+    ~/dev/nif-perl/aes.pl -decrypt -in ~/.nifconfig.ini.aes -key perry81@N9199253.nif.llnl.gov
+}
+
+# vim:ft=sh

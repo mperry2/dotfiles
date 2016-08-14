@@ -1,0 +1,128 @@
+# ~/.inputrc
+
+# This file controls the behaviour of line input editing for programs that use
+# the GNU Readline library. Existing programs include FTP, Bash, and Gdb.
+
+
+# =============================================================================
+# Initial setup
+# =============================================================================
+
+# Include any system-wide bindings and variable assignments from /etc/inputrc
+$include /etc/inputrc
+
+# Re-read the inputrc file.
+# Shortcut: C-x C-r
+"\C-x\C-r": re-read-init-file
+
+
+# =============================================================================
+# Readline options
+# =============================================================================
+
+# Mode
+set editing-mode emacs
+
+set blink-matching-paren on
+
+# Never beep.
+set bell-style none               # Options: none, visible, audible
+
+# Disable 8-bit characters
+set input-meta off
+set output-meta off
+set convert-meta on
+
+# Completion Options
+set completion-query-items 100    # default
+set completion-ignore-case off    # default
+set horizontal-scroll-mode off
+set disable-completion off        # If 'on', don't do word completion, just self-insert
+set expand-tilde off              # Make readline perform tilde expansion when doing completion
+set show-all-if-ambiguous off     # Don't enable single tab complettion
+set visible-stats on              # Show item type like 'ls -F', displays /,*,@ next to name
+
+
+# When set to `on', readline will try to enable the application keypad when
+# it is called.  Some systems need this to enable the arrow keys.
+set enable-keypad off
+
+# This variable, when set to `on', says to display an asterisk (`*') at the
+# start of history lines which have been modified.
+set mark-modified-lines off
+
+
+# If set to On, completed names which are symbolic links to directories have a
+# slash appended (subject to the value of mark-directories).
+set mark-symlinked-directories on
+
+
+# =============================================================================
+# Keymap settings
+# =============================================================================
+
+# Some godforsaken unix systems still make these the default interrupt and
+# delete characters.  Welcome to the future.
+"@": self-insert
+"#": self-insert
+
+$if mode=emacs
+    ## Readline specific functions
+    #"\e[1~": beginning-of-line           # CTRL + A
+    #"\e[4~": end-of-line                 # CTRL + E
+    #"\e[5C": forward-word                # Control + Right
+    #"\e[5D": backward-word               # Control + Left
+    #"\e[3~": delete-char                 # Delete
+    #"\e[2~": quoted-insert               # CTRL + v
+    #"\e[5~": history-search-backward     # Page Up
+    #"\e[6~": history-search-forward      # Page Down
+    ##"\t": menu-complete                 # Tab cycles through completions
+
+    ## If the above prevents Left and Right from working, try this:
+    ##"\e[C": forward-char                # Move forward one character.
+    ##"\e[D": backward-char               # Move backwards one character.
+$endif
+
+# Avoid binding ^J, ^M, ^C, ^?, ^S, ^Q, etc.
+$if mode=vi
+    #set keymap vi-command
+    #"gg": beginning-of-history
+    #"G": end-of-history
+    #"k": history-search-backward
+    #"j": history-search-forward
+    #"?": reverse-search-history
+    #"/": forward-search-history
+
+    #set keymap vi-insert
+    #"\C-l": clear-screen
+    #"\C-w": backward-kill-word
+    #"\C-a": beginning-of-line
+    #"\C-e": end-of-line
+$endif
+
+# Macros that are convenient for shell interaction
+$if Bash
+    # A magic space inserts a space character as normal and also performs
+    # history expansion in the line.  Press Space before Enter if necessary.
+    Space: magic-space
+
+    # Edit the path
+    # Shortcut: C-x p
+    "\C-xp": "PATH=${PATH}\M-\C-e\C-a\M-f\C-f"
+
+    # Prepare to type a quoted word.  Insert open and close double quotes
+    # and move to just after the open quote
+    # Shortcut: C-x "
+    "\C-x\"": "\"\"\C-b"
+
+    # Quote the current or previous word
+    # Shortcut: C-x q
+    "\C-xq": "\M-b\"\M-f\""
+
+    # Edit variable on current line.
+    # Shortcut: M-C-v
+    "\M-\C-v": "\C-a\M-f\C-k\C-a\C-k$\C-y\M-\C-e\C-a\C-y="
+
+    # Add a binding to refresh the line, which is unbound
+    #"\C-xr": redraw-current-line
+$endif

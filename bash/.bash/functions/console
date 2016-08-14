@@ -1,0 +1,15 @@
+# SYNOPSIS
+#   console server
+#
+# DESCRIPTION
+#   Connects to the console of the specified server.
+
+console() {
+    if [[ $# -ne 1 ]]; then
+        echo "$FUNCNAME: Provide name of server console to connect to."
+    else
+        ssh -t $USER:$1@consoleprod0001
+    fi
+}
+
+# vim:ft=sh

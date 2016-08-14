@@ -1,0 +1,15 @@
+# SYNOPSIS
+#   which [options] [--] programname [...]
+#
+# DESCRIPTION
+#   Recommended alias for GNU which. See the 'which' man page for more
+#   information.
+
+unalias which 2>/dev/null
+which ()
+{
+  (alias; declare -f) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@
+}
+export -f which
+
+# vim:ft=sh

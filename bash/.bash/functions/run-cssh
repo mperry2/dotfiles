@@ -1,0 +1,16 @@
+# SYNOPSIS
+#   run-cssh filename
+#
+# DESCRIPTION
+#   Creates connections to the servers listed in the filename using cssh.
+
+run-cssh() {
+    if [[ -z $1 ]]; then
+        echo "Usage: $FUNCNAME <filename>"
+        echo "Provide a file name that lists one host per line."
+        return 2
+    fi
+    cssh $(cat "$*")
+}
+
+# vim:ft=sh

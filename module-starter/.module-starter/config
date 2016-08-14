@@ -1,0 +1,5 @@
+author:  Matt Perry
+email:   matt@mattperry.com
+license: perl
+verbose: 1
+ignores_type: git
