@@ -20,3 +20,4 @@ BoldCyan=113,190,190
 BoldWhite=255,255,255
 Font=DejaVu Sans Mono
 CopyOnSelect=no
+Term=xterm-256color
