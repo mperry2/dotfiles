@@ -22,6 +22,15 @@ SUBDIRS = $(foreach dir,$(DIRS),$(PREFIX)$(dir))
 
 .PHONY: usage
 usage:
+	@# Update submodules if this is the first run
+	@if [ ! -f .init ]; then \
+	    echo "Performing first-run initialization of dotfiles."; \
+	    $(MAKE) update; \
+	    touch .init; \
+	    echo "Successfully completed initialization of dotfiles."; \
+	    echo -e '\n\n\n'; \
+	fi
+	@# Display usage
 	@echo "Usage: make [TARGET... | all | update]"
 	@echo "Create symlinks to configuration files in the user's home directory."
 	@echo "Requires GNU stow."
