@@ -116,7 +116,6 @@ export MORE='-d'
 export RLWRAP_HOME=$HOME/.config/rlwrap
 export RSYNC_PARTIAL_DIR='.rsync-partial'
 export RSYNC_RSH=$(type -p ssh)
-export UNZIP='-L'
 export ZIPINFO='-z'
 
 # Colors for less
