@@ -18,6 +18,9 @@
 -- history once.
 \set HISTCONTROL ignoredups
 
+-- Exit at the second EOF to prevent accidental logouts.
+\set IGNOREEOF 2
+
 -- Errors are ignored in interactive sessions and not when reading
 -- script files.
 \set ON_ERROR_ROLLBACK interactive
@@ -31,6 +34,7 @@ SET tcp_keepalives_idle = 60;
 \setenv LESS '-F -i -M -S -X --shift 5'
 \pset pager always
 
+\set PROMPT1 '%[%033[33;1m%]%x%[%033[0m%]%[%033[1m%]%/%[%033[0m%]%R%# '
 
 -- Set some variables with queries that we can call
 
