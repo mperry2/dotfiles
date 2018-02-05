@@ -1,6 +1,6 @@
 # Matt's Dotfiles
 
-25+ years of dotfile tweaking has lead me to this.
+25+ years of dotfile tweaking has led me to this.
 
 ## Requirements
 
@@ -14,7 +14,7 @@ You'll need GNU Stow, `make`, and `git`.
 
 ## License and Copyright
 
-Copyright 1991-2016 Matt Perry.
+Copyright 1991-2018 Matt Perry.
 
 This program is free software; you can redistribute it and/or modify it under
 the terms of the GNU General Public License as published by the Free Software
