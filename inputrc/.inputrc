@@ -115,7 +115,7 @@ $if Bash
     # Shortcut: C-x "
     "\C-x\"": "\"\"\C-b"
 
-    # Quote the current or previous word
+    # Quote the current or previous word with double quotes
     # Shortcut: C-x q
     "\C-xq": "\M-b\"\M-f\""
 
@@ -125,4 +125,15 @@ $if Bash
 
     # Add a binding to refresh the line, which is unbound
     #"\C-xr": redraw-current-line
+$endif
+
+# Macros for the PostgreSQL psql command
+$if psql
+    # Quote the current or previous word with single quotes
+    # Shortcut: M-q
+    "\M-q": "\M-b\'\M-f\'"
+
+    # Show which tables the column name appears in
+    # Shortcut: M-c
+    "\M-c": "\C-a\C-kSELECT DISTINCT relname AS table, reltuples AS rowcount \n  FROM information_schema.columns AS cols \n  JOIN pg_class ON pg_class.relname = cols.table_name \n WHERE column_name = '\C-y'\n   AND reltuples > 0 \nORDER BY reltuples;\n"
 $endif
