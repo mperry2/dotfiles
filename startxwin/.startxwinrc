@@ -1,0 +1,3 @@
+xrdb -load $HOME/.Xresources
+xhost +localhost
+exec sleep infinity
