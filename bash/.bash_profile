@@ -16,5 +16,6 @@ fi
 echo "Term set to $TERM"
 [[ -x ~/bin/show-os ]] && ~/bin/show-os
 [[ -x $(type -p uptime) ]] && uptime
+true
 
 #echo ".bash_profile: Leaving"
