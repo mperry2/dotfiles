@@ -1,0 +1,153 @@
+! =============================================================================
+! Definitions
+! =============================================================================
+
+! https://jnrowe.github.io/articles/tips/Sharing_Xresources_between_systems.html
+
+#ifndef FIXED_FONT
+    #define FIXED_FONT xft:Inconsolata:pixelsize=14:antialias=false
+#endif
+#ifndef BOLD_FIXED_FONT
+    #define BOLD_FIXED_FONT FIXED_FONT:bold
+#endif
+
+
+! my preferred font - TODO: specify exactly, just to make sure
+#define FONTNAME DejaVu Sans Mono
+#define FONTSIZE 12
+!#define FONTNAME 9x15
+!#define FONTNAME 8x13
+!#define FONTNAME lucidasanstypewriter-9
+!#define FONTNAME -adobe-courier-medium-r-normal--12-120-75-75-m-70-iso8859-1
+
+! General setting for terminals
+#define TERM_FOREGROUND  WhiteSmoke
+#define TERM_BACKGROUND  Black
+#define TERM_GEOMETRY    80x40
+#define TERM_CURSORCOLOR Green
+#define TERM_SCROLLBAR   true
+
+! Terminal color definitions
+#define _color0  #000000
+#define _color1  #9e1828
+#define _color2  #008800
+#define _color3  #968a38
+#define _color4  #414171
+#define _color5  #963c59
+#define _color6  #418179
+#define _color7  gray
+#define _color8  gray40
+#define _color9  #cf6171
+#define _color10 #7cbc8c
+#define _color11 #fff796
+#define _color12 #4186be
+#define _color13 #cf9ebe
+#define _color14 #71bebe
+#define _color15 white
+
+
+
+
+! =============================================================================
+! XTerm
+! =============================================================================
+
+! This resource specifies whether or not to ignore the 'alternate screen'
+! of applications such as vi.  When it is on, these applications will restore
+! the contents of the screen when they are exited to what they were before
+! they were started.  When it is off, the contents of vi will remain on the
+! screen after the program is quit.
+!XTerm.VT100.titeInhibit:  true
+
+!XTerm*foreground:  TERM_FOREGROUND
+!XTerm*background:  TERM_BACKGROUND
+
+!XTerm*faceName:       FONTNAME
+!XTerm*faceSize:       FONTSIZE
+!XTerm*allowBoldFonts: false
+!!XTerm*pointerColor: red
+!!XTerm*pointerColorBackground: white
+!!xterm*renderFont: false
+
+!XTerm*saveLines:      4096
+!XTerm*VT100*geometry: TERM_GEOMETRY
+!XTerm*cursorColor:    TERM_CURSORCOLOR
+!XTerm*scrollBar:      TERM_SCROLLBAR
+!XTerm*rightScrollBar: true
+
+!XTerm*mainMenu*Background: Gray20
+!XTerm*vtMenu*Background: Gray20
+!XTerm*fontMenu*Background: Gray20
+!XTerm*tekMenu*Background: Gray20
+
+!XTerm*VT100*translations: #override \
+!Shift<Key>Return: string(" &") string(0x0A) \n\
+!Meta<Key>Return: string(" | less") string(0x0A) \n\
+!~Shift<Key>Prior: scroll-back(1,page) \n\
+!~Shift<Key>Next: scroll-forw(1,page) \n\
+!Shift<Key>Prior: scroll-back(1) \n\
+!Shift<Key>Next: scroll-forw(1) \n\
+!<Key>Delete: string(0x1b) string("[2~") \n\
+!<Key>BackSpace: string(0x7f)
+
+XTerm*color0:  _color0
+XTerm*color1:  _color1
+XTerm*color2:  _color2
+XTerm*color3:  _color3
+XTerm*color4:  _color4
+XTerm*color5:  _color5
+XTerm*color6:  _color6
+XTerm*color7:  _color7
+XTerm*color8:  _color8
+XTerm*color9:  _color9
+XTerm*color10: _color10
+XTerm*color11: _color11
+XTerm*color12: _color12
+XTerm*color13: _color13
+XTerm*color14: _color14
+XTerm*color15: _color15
+
+XTerm.toolBar: false
+
+XTerm*vt100.foreground: gray
+XTerm*vt100.background: black
+
+XTerm*mainMenu*Background: gray90
+XTerm*vtMenu*Background: gray90
+XTerm*fontMenu*Background: gray90
+XTerm*tekMenu*Background: gray90
+
+xterm*vt100.faceName: mono
+xterm*vt100.faceSize: 11
+
+XTerm.vt100.metaSendsEscape: true
+!XTerm*vt100.cursorColor: yellow
+
+!XTerm*form.Background: gray90
+!XTerm*menubar.Background: gray90
+
+
+!csshxterm*vt100.font: fixed
+
+!XTerm.vt100.colorBDMode: true
+!XTerm.vt100.allowBoldFonts: false
+
+!----------------------------------
+!XTerm*metaSendsEscape: true
+!XTerm*cursorColor: black
+
+!UXTerm*metaSendsEscape: true
+!UXTerm*cursorColor: red
+!UXTerm*font: -windows-proggytiny-medium-r-normal--10-80-96-96-c-60-iso8859-1
+!UXTerm*faceName: DejaVu Sans Mono
+!UXTerm*faceSize: 14
+
+
+! XTerm colors
+! amber	 #ff7f00	 #1f0000
+! green	 #00df1f	 #001f00
+! blue	 #ffffff	 #003f7f
+! yellow9	 #000000	 #ffffea
+! blue9	 #000000	 #eaffff
+! vms	 #fffbf0	 #008080
+! hpux	 #ffffff	 #686f81
