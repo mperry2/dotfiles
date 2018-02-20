@@ -294,8 +294,15 @@ check_exit_status() {
     return 0
 }
 
+check_hist_status() {
+    if [[ -z $HISTFILE ]]; then
+        echo '[HISTOFF]' 1>&2
+    fi
+    return 0
+}
+
 # Prepend our command to any existing value of PROMPT_COMMAND
-PROMPT_COMMAND="check_exit_status; $(echo $PROMPT_COMMAND)"
+PROMPT_COMMAND="check_exit_status; check_hist_status; $(echo $PROMPT_COMMAND)"
 
 
 # =============================================================================
