@@ -1,0 +1,11 @@
+menu root {
+    "Reload .XWinrc"    RELOAD
+    SEPARATOR
+}
+
+RootMenu root
+
+STYLES {
+    cssh TOPMOST
+    csshxterm TOPMOST
+}
