@@ -1,199 +1,526 @@
-# }}} termcap {{{1
 #
-# I hate this! Why not use the `tput colors` result?
-# Below, there should be one TERM entry for each termtype that is colorizable
-TERM putty-256color
-TERM rxvt-256color
-TERM rxvt-unicode256
-TERM rxvt-unicode-256color
-TERM screen-256color
-TERM xterm-256color
-TERM gnome-256color
-TERM Eterm-256color
-
-
-# }}} core {{{1
+# Dir colors
 #
-# Below are the color init strings for the basic file types. A color init
+
+# Configuration file for dircolors, a utility to help you set the
+# LS_COLORS environment variable used by GNU ls with the --color option.
+#
+# This configuration file consists of several statements, one per line.
+# Anything right of a hash mark (#) is treated as a comment, if the
+# hash mark is at the beginning of a line or is preceded by at least
+# one whitespace. Blank lines are ignored.
+#
+# The keywords COLOR, OPTIONS, and EIGHTBIT (honored by the slackware
+# version of dircolors) are recognized but ignored.
+#
+# The global section of the file consists of any statement before the
+# first TERM statement. Any statement in the global section of the file
+# is considered valid for all terminal types. Following the global
+# section is one or more terminal-specific sections, preceded by one or
+# more TERM statements which specify the terminal types (as given by the
+# TERM environment variable) the following declarations apply to. TERM
+# entries can be glob patterns. It is always possible to override a
+# global declaration by a subsequent terminal-specific one.
+#
+# Below is a list of color init strings that can be used. A color init
 # string consists of one or more of the following numeric codes:
+#
 # Attribute codes:
-#NORMAL 00          # global default, no color code at all
-#FILE 00            # normal file, use no color at all
-RESET   0           # reset to "normal" color
+#   00=none 01=bold 04=underscore 05=blink 07=reverse 08=concealed
+# Text color codes:
+#   30=black 31=red 32=green 33=yellow 34=blue 35=magenta 36=cyan 37=white
+#   38;5;COLOR_NUMBER = 256-color
+# Background color codes:
+#   40=black 41=red 42=green 43=yellow 44=blue 45=magenta 46=cyan 47=white
+#   48;5;COLOR_NUMBER = 256-color
+
+
+
+#
+# Global Settings
+#
+
+RESET   0       # reset to "normal" color
+NORMAL  0       # Normal (non-filename) text
+FILE    0       # Regular file
+
+
+
+#
+# Settings for 8 and 16 color terminals
+#
+
+TERM ansi
+TERM linux
+TERM xterm
+TERM xterm-16color
+
+DIR     01;34       # directory
+LINK    01;36       # symbolic link. (If you set this to 'target' instead of a
+                    # numerical value, the color is as for the file pointed to.)
+EXEC    01;32       # This is for files with execute permission:
+
+MULTIHARDLINK   00                       # regular file with more than one link
+FIFO            40;33                    # pipe
+SOCK            01;35                    # socket
+DOOR            01;35                    # door (Solaris only)
+BLK             40;33;01                 # block device driver
+CHR             40;33;01                 # character device driver
+ORPHAN          40;31;01                 # symlink to nonexistent file, or non-stat'able file ...
+MISSING         00                       # ... and the files they point to
+SETUID          37;41                    # file that is setuid (u+s)
+SETGID          30;43                    # file that is setgid (g+s)
+CAPABILITY      30;41                    # file with capability
+STICKY                  37;44            # dir with the sticky bit set (+t) and not other-writable
+OTHER_WRITABLE          34;42            # dir that is other-writable (o+w) and not sticky
+STICKY_OTHER_WRITABLE   30;42            # dir that is sticky and other-writable (+t,o+w)
+
+
+# archives or compressed (bright red)
+.tar    01;31
+.tgz    01;31
+.arc    01;31
+.arj    01;31
+.taz    01;31
+.lha    01;31
+.lz4    01;31
+.lzh    01;31
+.lzma   01;31
+.tlz    01;31
+.txz    01;31
+.tzo    01;31
+.t7z    01;31
+.zip    01;31
+.z      01;31
+.Z      01;31
+.dz     01;31
+.gz     01;31
+.lrz    01;31
+.lz     01;31
+.lzo    01;31
+.xz     01;31
+.bz2    01;31
+.bz     01;31
+.tbz    01;31
+.tbz2   01;31
+.tz     01;31
+.deb    01;31
+.rpm    01;31
+.jar    01;31
+.war    01;31
+.ear    01;31
+.sar    01;31
+.rar    01;31
+.alz    01;31
+.ace    01;31
+.zoo    01;31
+.cpio   01;31
+.7z     01;31
+.rz     01;31
+.cab    01;31
+
+# image formats
+.jpg    01;35
+.JPG    01;35 # stupid but needed
+.jpeg   01;35
+.gif    01;35
+.bmp    01;35
+.pbm    01;35
+.pgm    01;35
+.ppm    01;35
+.tga    01;35
+.xbm    01;35
+.xpm    01;35
+.tif    01;35
+.tiff   01;35
+.png    01;35
+.svg    01;35
+.svgz   01;35
+.mng    01;35
+.pcx    01;35
+.gl     01;35
+.dl     01;35
+.xcf    01;35
+.xwd    01;35
+.yuv    01;35
+.cgm    01;35
+.emf    01;35
+
+# video formats
+.mov    01;35
+.mpg    01;35
+.mpeg   01;35
+.m2v    01;35
+.mkv    01;35
+.webm   01;35
+.ogm    01;35
+.mp4    01;35
+.m4v    01;35
+.mp4v   01;35
+.vob    01;35
+.qt     01;35
+.nuv    01;35
+.wmv    01;35
+.asf    01;35
+.rm     01;35
+.rmvb   01;35
+.flc    01;35
+.avi    01;35
+.fli    01;35
+.flv    01;35
+.ogv    01;35
+.ogx    01;35
+
+# audio formats
+.aac    00;36
+.au     00;36
+.flac   00;36
+.m4a    00;36
+.mid    00;36
+.midi   00;36
+.mka    00;36
+.mp3    00;36
+.mpc    00;36
+.ogg    00;36
+.ra     00;36
+.wav    00;36
+.oga    00;36
+.opus   00;36
+.spx    00;36
+.xspf   00;36
+
+
+
+#
+# Settings for 256 color terminals
+#
+
+TERM cygwin
+TERM xterm-256color
+
 DIR     38;5;39     # directory
 LINK    38;5;123    # symbolic link (If you set this to 'target' instead of a
                     # numerical value, the color is as for the file pointed to.)
+EXEC    38;5;154    # This is for files with execute permission
 
 MULTIHARDLINK   38;5;224                 # regular file with more than one link
-FIFO    48;5;237;38;5;208                # pipe
-SOCK    48;5;237;38;5;175                # socket
-DOOR    48;5;237;38;5;206                # door
-BLK     48;5;237;38;5;227                # block device driver
-CHR     48;5;237;38;5;227                # character device driver
-ORPHAN  48;5;244;38;5;123                # symlink to nonexistent file, or non-stat'able file
-MISSING 48;5;246;38;5;0                  # ... and the files they point to
-SETUID  48;5;124;38;5;255                # file that is setuid (u+s)
-SETGID  48;5;160;38;5;0                  # file that is setgid (g+s)
-CAPABILITY  48;5;124;38;5;226            # file with capability
+FIFO            48;5;237;38;5;208        # pipe
+SOCK            48;5;237;38;5;175        # socket
+DOOR            48;5;237;38;5;206        # door (Solaris only)
+BLK             48;5;237;38;5;227        # block device driver
+CHR             48;5;237;38;5;227        # character device driver
+ORPHAN          48;5;244;38;5;123        # symlink to nonexistent file, or non-stat'able file
+MISSING         48;5;246;38;5;0          # ... and the files they point to
+SETUID          48;5;124;38;5;255        # file that is setuid (u+s)
+SETGID          48;5;160;38;5;0          # file that is setgid (g+s)
+CAPABILITY      48;5;124;38;5;226        # file with capability
+STICKY                  48;5;75;38;5;0   # dir with the sticky bit set (+t) and not other-writable
+OTHER_WRITABLE          48;5;214;38;5;0  # dir that is other-writable (o+w) and not sticky
 STICKY_OTHER_WRITABLE   48;5;20;38;5;255 # dir that is sticky and other-writable (+t,o+w)
-OTHER_WRITABLE  48;5;214;38;5;0          # dir that is other-writable (o+w) and not sticky
-STICKY  48;5;75;38;5;0                   # dir with the sticky bit set (+t) and not other-writable
-EXEC    38;5;154                         # This is for files with execute permission
 
 
-# }}} archives or compressed file {{{1
+# Archives or compressed files
 # (bright red)
-.tar    38;5;167
-.tgz    38;5;167
-.arj    38;5;167
-.taz    38;5;167
-.lzh    38;5;167
-.lzma   38;5;167
-.tlz    38;5;167
-.txz    38;5;167
-.zip    38;5;167
-.z      38;5;167
-.Z      38;5;167
-.dz     38;5;167
-.gz     38;5;167
-.lz     38;5;167
-.xz     38;5;167
-.bz2    38;5;167
-.tbz    38;5;167
-.tbz2   38;5;167
-.bz     38;5;167
-.tz     38;5;167
-.deb    38;5;167
-.rpm    38;5;167
-.jar    38;5;167
-.war    38;5;167
-.ear    38;5;167
-.sar    38;5;167
-.rar    38;5;167
-.ace    38;5;167
-.zoo    38;5;167
-.cpio   38;5;167
-.7z     38;5;167
-.rz     38;5;167
+.tar            38;5;167
+.tgz            38;5;167
+.arc            38;5;167
+.arj            38;5;167
+.taz            38;5;167
+.lha            38;5;167
+.lz4            38;5;167
+.lzh            38;5;167
+.lzma           38;5;167
+.tlz            38;5;167
+.txz            38;5;167
+.tzo            38;5;167
+.t7z            38;5;167
+.zip            38;5;167
+.z              38;5;167
+.Z              38;5;167
+.dz             38;5;167
+.gz             38;5;167
+.lrz            38;5;167
+.lz             38;5;167
+.lzo            38;5;167
+.xz             38;5;167
+.bz2            38;5;167
+.bz             38;5;167
+.tbz            38;5;167
+.tbz2           38;5;167
+.tz             38;5;167
+.deb            38;5;167
+.rpm            38;5;167
+.jar            38;5;167
+.war            38;5;167
+.ear            38;5;167
+.sar            38;5;167
+.rar            38;5;167
+.alz            38;5;167
+.ace            38;5;167
+.zoo            38;5;167
+.cpio           38;5;167
+.7z             38;5;167
+.rz             38;5;167
+.cab            38;5;167
 
 
-# }}} image formats {{{1
+# Image formats
 # (magenta)
-.jpg    38;5;219
-.jpeg   38;5;219
-.gif    38;5;219
-.bmp    38;5;219
-.pbm    38;5;219
-.pgm    38;5;219
-.ppm    38;5;219
-.tga    38;5;219
-.xbm    38;5;219
-.xpm    38;5;219
-.tif    38;5;219
-.tiff   38;5;219
-.png    38;5;219
-.svg    38;5;219
-.svgz   38;5;219
-.mng    38;5;219
-.pcx    38;5;219
-.gl     38;5;219
-.dl     38;5;219
-.xcf    38;5;219
-.xwd    38;5;219
-.yuv    38;5;219
-.cgm    38;5;219
-.emf    38;5;219
+.jpg            38;5;219
+.JPG            38;5;219 # stupid but needed
+.jpeg           38;5;219
+.gif            38;5;219
+.bmp            38;5;219
+.pbm            38;5;219
+.pgm            38;5;219
+.ppm            38;5;219
+.tga            38;5;219
+.xbm            38;5;219
+.xpm            38;5;219
+.tif            38;5;219
+.tiff           38;5;219
+.png            38;5;219
+.svg            38;5;219
+.svgz           38;5;219
+.mng            38;5;219
+.pcx            38;5;219
+.gl             38;5;219
+.dl             38;5;219
+.xcf            38;5;219
+.xwd            38;5;219
+.yuv            38;5;219
+.cgm            38;5;219
+.emf            38;5;219
 
 
-# }}} video formats {{{1
+# Video formats
 # (darker magenta)
-.mov    38;5;200
-.mpg    38;5;200
-.mpeg   38;5;200
-.m2v    38;5;200
-.mkv    38;5;200
-.webm   38;5;200
-.ogm    38;5;200
-.mp4    38;5;200
-.m4v    38;5;200
-.mp4v   38;5;200
-.vob    38;5;200
-.qt     38;5;200
-.nuv    38;5;200
-.wmv    38;5;200
-.asf    38;5;200
-.rm     38;5;200
-.rmvb   38;5;200
-.flc    38;5;200
-.avi    38;5;200
-.fli    38;5;200
-.flv    38;5;200
-
-# http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
-.axv    38;5;200
-.anx    38;5;200
-.ogv    38;5;200
-.ogx    38;5;200
+.mov            38;5;200
+.mpg            38;5;200
+.mpeg           38;5;200
+.m2v            38;5;200
+.mkv            38;5;200
+.webm           38;5;200
+.ogm            38;5;200
+.mp4            38;5;200
+.m4v            38;5;200
+.mp4v           38;5;200
+.vob            38;5;200
+.qt             38;5;200
+.nuv            38;5;200
+.wmv            38;5;200
+.asf            38;5;200
+.rm             38;5;200
+.rmvb           38;5;200
+.flc            38;5;200
+.avi            38;5;200
+.fli            38;5;200
+.flv            38;5;200
+.ogv            38;5;200
+.ogx            38;5;200
 
 
-# }}} audio formats {{{1
+# Audio formats
 # (yellow, but not too close to device files)
-.aac    38;5;214
-.au     38;5;214
-.flac   38;5;214
-.mid    38;5;214
-.midi   38;5;214
-.mka    38;5;214
-.mp3    38;5;214
-.mpc    38;5;214
-.ogg    38;5;214
-.ra     38;5;214
-.wav    38;5;214
-
-# http://wiki.xiph.org/index.php/MIME_Types_and_File_Extensions
-.axa    38;5;214
-.oga    38;5;214
-.spx    38;5;214
-.xspf   38;5;214
-
-
-# }}} documents {{{1
-.pdf    38;5;35
-.ps     38;5;35
-.txt    38;5;35
-.patch  38;5;35
-.diff   38;5;35
-.log    38;5;35
-.tex    38;5;35
-.doc    38;5;35
-.odt    38;5;35
-.sxw    38;5;35
+.aac            38;5;214
+.au             38;5;214
+.flac           38;5;214
+.m4a            38;5;214
+.mid            38;5;214
+.midi           38;5;214
+.mka            38;5;214
+.mp3            38;5;214
+.mpc            38;5;214
+.ogg            38;5;214
+.ra             38;5;214
+.wav            38;5;214
+.oga            38;5;214
+.opus           38;5;214
+.spx            38;5;214
+.xspf           38;5;214
 
 
-# }}} misc {{{1
-#
-# List any file extensions like '.gz' or '.tar' that you would like ls
-# to colorize below. Put the extension, a space, and the color init string.
-# (and any comments you want to add after a '#')
-# executables (bright green)
-#.cmd    38;5;154
-#.exe    38;5;154
-#.com    38;5;154
-#.btm    38;5;154
-#.bat    38;5;154
-#.sh     38;5;154
-#.csh    38;5;154
+# Documents
+.txt            38;5;35
+.pdf            38;5;35
+.ps             38;5;35
+.patch          38;5;35
+.diff           38;5;35
+.log            38;5;35
+.tex            38;5;35
 
-*~      38;5;242
-.bak    38;5;242
-.back   38;5;242
-.bkp    38;5;242
+# LibreOffice
+*.odt           38;5;35 # ODF Text   
+*.ott           38;5;35 # ODF Text Template  
+*.odm           38;5;35 # ODF Master Document    
+*.ods           38;5;35 # ODF Spreadsheet    
+*.ots           38;5;35 # ODF Spreadsheet Template   
+*.odg           38;5;35 # ODF Drawing    
+*.otg           38;5;35 # ODF Drawing Template   
+*.odp           38;5;35 # ODF Presentation   
+*.otp           38;5;35 # ODF Presentation Template  
+*.odf           38;5;35 # ODF Formula    
+*.odb           38;5;35 # ODF Database   
+*.oxt           38;5;35 # LibreOffice Extension  
 
-.sql    38;5;219
-*login.sql    38;5;242
-# sqlplus editor temp file
-*afiedt.buf    38;5;242
+# Word
+.doc            38;5;35 # Word 97-2003 Document (legacy)
+.dot            38;5;35 # Word 97-2003 Template (legacy)
+.docx           38;5;35 # Document
+.docm           38;5;35 # Macro-enabled document
+.dotx           38;5;35 # Template
+.dotm           38;5;35 # Macro-enabled template
 
-# }}}
+#Excel
+.xls            38;5;35 # Excel 97-2003 Worksheet (legacy)
+.xlt            38;5;35 # Excel 97-2003 Template (legacy)
+.xlsx           38;5;35 # Workbook
+.xlsm           38;5;35 # Macro-enabled workbook
+.xltx           38;5;35 # Template
+.xltm           38;5;35 # Macro-enabled template
 
-# vim:ft=dircolors:fdm=marker
+#PowerPoint
+.ppt            38;5;35 # PowerPoint 97-2003 presentation (legacy)
+.pot            38;5;35 # PowerPoint 97-2003 template (legacy)
+.pps            38;5;35 # PowerPoint 97-2003 slideshow (legacy)
+.pptx           38;5;35 # Presentation
+.pptm           38;5;35 # Macro-enabled presentation
+.potx           38;5;35 # Template
+.potm           38;5;35 # Macro-enabled template
+.ppam           38;5;35 # Macro-enabled add-in
+.ppsx           38;5;35 # Show
+.ppsm           38;5;35 # Macro-enabled show
+.sldx           38;5;35 # Slide
+.sldm           38;5;35 # Macro-enabled slide
+.thmx           38;5;35 # Office theme
+
+
+.sql            38;5;219
+
+
+# "transient" files such as logs and backups
+# (dark gray)
+*~              38;5;242
+.bak            38;5;242
+.back           38;5;242
+.bkp            38;5;242
+*afiedt.buf     38;5;242 		# Oracle sqlplus editor temp file
+
+.log            00;38;5;235
+.bak            00;38;5;235
+.aux            00;38;5;235
+.out            00;38;5;235
+.toc            00;38;5;235
+*~              00;38;5;235
+*#              00;38;5;235
+.part           00;38;5;235
+.incomplete     00;38;5;235
+.swp            00;38;5;235
+.tmp            00;38;5;235
+.temp           00;38;5;235
+.o              00;38;5;235
+.pyc            00;38;5;235
+.class          00;38;5;235
+.cache          00;38;5;235
+
+# Misc
+*login.sql      38;5;242 		# Oracle sqlplus config file
+
+
+# Source code
+#*.awk           48;5;89;38;5;197;1;3;4;7
+#*.sed           48;5;89;38;5;197;1;3;4;7
+#*.c             48;5;89;38;5;197;1;3;4;7
+#*.h             48;5;89;38;5;197;1;3;4;7
+#*.cpp           48;5;89;38;5;197;1;3;4;7
+#*.hpp           48;5;89;38;5;197;1;3;4;7
+#*.java          48;5;89;38;5;197;1;3;4;7
+#*.pl            48;5;89;38;5;197;1;3;4;7
+#*.pm            48;5;89;38;5;197;1;3;4;7
+#*.pod           48;5;89;38;5;197;1;3;4;7
+#*.py            48;5;89;38;5;197;1;3;4;7
+#*.R             48;5;89;38;5;197;1;3;4;7
+#*.r             48;5;89;38;5;197;1;3;4;7
+#*.t             48;5;89;38;5;197;1;3;4;7
+#*.tcl           48;5;89;38;5;197;1;3;4;7
+#*Makefile       48;5;89;38;5;197;1;3;4;7
+# .git
+# .gitignore
+# .gitattributes
+# .gitmodules
+# .diff
+# .patch
+
+# Data
+#*.json          48;5;89;38;5;197;1;3;4;7
+#*.yaml          48;5;89;38;5;197;1;3;4;7
+#*.yml           48;5;89;38;5;197;1;3;4;7
+#*.xml           48;5;89;38;5;197;1;3;4;7
+
+# Config files
+*.cfg           1
+*.cnf           1
+*.conf          1
+*.ini           1
+*rc             1
+
+# Security and encryption
+# .aes
+# .crt
+# .csr
+# .gpg
+# .key
+# .p12
+# .pem
+# .pgp
+
+
+# Dockerfile
+# .dockerignore
+# README
+# README.txt
+# readme.txt
+# LICENSE
+# COPYING
+# INSTALL
+# COPYRIGHT
+# AUTHORS
+# HISTORY
+# CONTRIBUTORS
+# PATENTS
+# VERSION
+# NOTICE
+# CHANGES
+# .md
+# .markdown
+# .sqlite
+# .csv
+# .rtf
+# .htm
+# .html
+# .css
+# .js
+# .php
+# .strace
+# .ltrace
+# .iso
+# .vmdk
+# .pcap
+# .DS_Store
+
+# Packaged apps
+# .apk
+# .deb
+# .rpm
+# .jar
+# .cab
+# .dmg
+# .msi
+# .war
+# .ear
+
+
+
+
+
+# vim:ft=dircolors
