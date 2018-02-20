@@ -85,6 +85,9 @@ perl: module-starter distzilla reply pause
 basic: bash inputrc dircolors vim xmodmap
 
 .PHONY: desktop
-desktop: xmodmap
+desktop: xmodmap xresources
+
+.PHONY: cygwin
+cygwin: mintty startxwin xwinrc xresources
 
 ## Makefile ends here
