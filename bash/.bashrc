@@ -110,6 +110,7 @@ FIGNORE+=':.swp'
 
 # Settings for programs
 export GREP_COLORS='mt=38;5;0;48;5;191:fn=38;5;147:ln=38;5;178:se=38;5;244:bn=38;5;148' # Normal
+export GPG_TTY=$(tty)
 export LESS='-c -i -M -R -j3 --shift 5'
 export MAKEFLAGS="-j $(grep -c ^processor /proc/cpuinfo 2>/dev/null || echo 2)"
 export MORE='-d'

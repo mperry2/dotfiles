@@ -3,6 +3,9 @@
 [user]
 	name = Matt Perry
 	email = matt@mattperry.com
+	signingkey = A1CA00C333704D88
+[commit]
+	gpgsign = true
 [http]
 	sslVerify = false
 [pager]
