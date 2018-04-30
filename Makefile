@@ -64,9 +64,9 @@ check:
 .PHONY: update
 update:
 	@echo 'Updating from remote repositories'
-	git pull --recurse-submodules=yes
-	git submodule init
-	git submodule update --init --remote --recursive
+	git pull
+	git submodule sync --recursive
+	git submodule update --init --recursive
 
 .PHONY: $(SUBDIRS)
 $(SUBDIRS): check
