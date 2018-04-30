@@ -23,6 +23,8 @@
 	log0 = log --first-parent -m
 	show0 = show --first-parent -m
 	blame0 = blame --first-parent -m
+[status]
+	submoduleSummary = true
 [credential]
 	helper = cache --timeout=28800
 [url "https://mperry2@github.com"]
