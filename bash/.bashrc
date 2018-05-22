@@ -87,7 +87,7 @@ HISTIGNORE='&'          # Matches the previous history line
 HISTIGNORE+=':h:history'
 HISTIGNORE+=':ls:ll:la:l.:ls -?(l|la|al)'
 HISTIGNORE+=':j:jobs:[bf]g:exit:logout:clear:pwd'
-HISTIGNORE+=':sudo su -*'
+HISTIGNORE+=':sudo @(su -*|reboot|poweroff)'
 
 # Filenames ending with these are ignored when using tab completion
 FIGNORE='~'             # Backup files created by many editors end in a tilde
