@@ -265,15 +265,27 @@ fi
 # }}} Shell prompt configuration                                           {{{1
 # =============================================================================
 
+# Support for Python venvs
+__git_ps1_venv() {
+   local pre="$1"
+   local post="$2"
+
+   if [[ -n "${VIRTUAL_ENV}" ]] && [[ -z "${VIRTUAL_ENV_DISABLE_PROMPT:-}" ]]; then
+       pre="($(basename "$VIRTUAL_ENV")) ${pre}"
+   fi
+
+   __git_ps1 "${pre}" "${post}"
+}
+
 source $HOME/.bash/git-prompt.sh
-PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
+#PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]$(__git_ps1 " (%s)")\$ '
 GIT_PS1_SHOWDIRTYSTATE=1
 GIT_PS1_SHOWSTASHSTATE=1
 GIT_PS1_SHOWUNTRACKEDFILES=1
 GIT_PS1_SHOWUPSTREAM="auto"
 GIT_PS1_SHOWCOLORHINTS=1
 
-PROMPT_COMMAND='__git_ps1 "\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]" "\\\$ "'
+PROMPT_COMMAND='__git_ps1_venv "\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]" "\\\$ "'
 
 #export PS4='+(${BASH_SOURCE}:${LINENO}): ${FUNCNAME[0]:+${FUNCNAME[0]}(): }'
 
