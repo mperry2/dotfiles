@@ -40,7 +40,7 @@ fi
 
 # Set the following to the location of the backwards compat completion dir.
 #
-: ${BASH_COMPLETION_COMPAT_DIR:=/home/perry81/stow/bash-completion-2.0/etc/bash_completion.d}
+: ${BASH_COMPLETION_COMPAT_DIR:=${HOME}/stow/bash-completion-2.0/etc/bash_completion.d}
 readonly BASH_COMPLETION_COMPAT_DIR
 
 # Blacklisted completions, causing problems with our code.
