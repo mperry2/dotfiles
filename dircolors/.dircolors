@@ -406,22 +406,22 @@ STICKY_OTHER_WRITABLE   48;5;20;38;5;255 # dir that is sticky and other-writable
 .bkp            38;5;242
 *afiedt.buf     38;5;242 		# Oracle sqlplus editor temp file
 
-.log            00;38;5;235
-.bak            00;38;5;235
-.aux            00;38;5;235
-.out            00;38;5;235
-.toc            00;38;5;235
-*~              00;38;5;235
-*#              00;38;5;235
-.part           00;38;5;235
-.incomplete     00;38;5;235
-.swp            00;38;5;235
-.tmp            00;38;5;235
-.temp           00;38;5;235
-.o              00;38;5;235
-.pyc            00;38;5;235
-.class          00;38;5;235
-.cache          00;38;5;235
+#.log            00;38;5;235
+.bak            00;38;5;240
+.aux            00;38;5;240
+.out            00;38;5;240
+.toc            00;38;5;240
+*~              00;38;5;240
+*#              00;38;5;240
+.part           00;38;5;240
+.incomplete     00;38;5;240
+.swp            00;38;5;240
+.tmp            00;38;5;240
+.temp           00;38;5;240
+.o              00;38;5;240
+.pyc            00;38;5;240
+.class          00;38;5;240
+.cache          00;38;5;240
 
 # Misc
 *login.sql      38;5;242 		# Oracle sqlplus config file
