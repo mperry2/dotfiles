@@ -41,11 +41,13 @@ pre_path $HOME/opt/bin
 pre_path $HOME/bin/$MACHTYPE
 pre_path $HOME/bin/scripts
 pre_path $HOME/bin
+pre_path $HOME/.local/bin
 export PATH
 
 # Set MANPATH so it includes user's private manpage directory if it exists.
 pre_path $HOME/share/man MANPATH
 pre_path $HOME/man MANPATH
+pre_path $HOME/.local/share/man MANPATH
 export MANPATH
 
 if [[ -d $HOME/.config/sqlplus ]]; then
