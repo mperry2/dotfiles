@@ -8,8 +8,8 @@
 	gpgsign = true
 [http]
 	sslVerify = false
-[pager]
-	pager = less -R
+[core]
+	pager = less -+c -FRX
 [push]
 	default = simple
 [alias]
