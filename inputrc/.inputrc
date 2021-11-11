@@ -43,11 +43,11 @@ set show-all-if-ambiguous off     # Don't enable single tab complettion
 set visible-stats on              # Show item type like 'ls -F', displays /,*,@ next to name
 
 
-# When set to `on', readline will try to enable the application keypad when
-# it is called.  Some systems need this to enable the arrow keys.
+# When set to 'on', readline will try to enable the application keypad when
+# it is called. Some systems need this to enable the arrow keys.
 set enable-keypad off
 
-# This variable, when set to `on', says to display an asterisk (`*') at the
+# This variable, when set to 'on', says to display an asterisk ('*') at the
 # start of history lines which have been modified.
 set mark-modified-lines off
 
@@ -62,7 +62,7 @@ set mark-symlinked-directories on
 # =============================================================================
 
 # Some godforsaken unix systems still make these the default interrupt and
-# delete characters.  Welcome to the future.
+# delete characters. Welcome to the future.
 "@": self-insert
 "#": self-insert
 
@@ -103,14 +103,14 @@ $endif
 # Macros that are convenient for shell interaction
 $if Bash
     # A magic space inserts a space character as normal and also performs
-    # history expansion in the line.  Press Space before Enter if necessary.
+    # history expansion in the line. Press Space before Enter if necessary.
     Space: magic-space
 
     # Edit the path
     # Shortcut: C-x p
     "\C-xp": "PATH=${PATH}\M-\C-e\C-a\M-f\C-f"
 
-    # Prepare to type a quoted word.  Insert open and close double quotes
+    # Prepare to type a quoted word. Insert open and close double quotes
     # and move to just after the open quote
     # Shortcut: C-x "
     "\C-x\"": "\"\"\C-b"
