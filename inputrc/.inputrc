@@ -25,23 +25,33 @@ set editing-mode emacs
 
 set blink-matching-paren on
 
-# Never beep.
-set bell-style none               # Options: none, visible, audible
+# Never beep. Options: none, visible, audible
+set bell-style none
 
 # Disable 8-bit characters
 set input-meta off
 set output-meta off
 set convert-meta on
 
-# Completion Options
-set completion-query-items 100    # default
-set completion-ignore-case off    # default
-set horizontal-scroll-mode off
-set disable-completion off        # If 'on', don't do word completion, just self-insert
-set expand-tilde off              # Make readline perform tilde expansion when doing completion
-set show-all-if-ambiguous off     # Don't enable single tab complettion
-set visible-stats on              # Show item type like 'ls -F', displays /,*,@ next to name
 
+#
+# Completion Options
+#
+set completion-query-items 100
+set completion-ignore-case off
+set horizontal-scroll-mode off
+
+# If 'on', don't do word completion, just self-insert
+set disable-completion off
+
+# Make readline perform tilde expansion when doing completion
+set expand-tilde off
+
+# Don't enable single tab complettion
+set show-all-if-ambiguous off
+
+# Show item type like 'ls -F', displays /,*,@ next to name
+set visible-stats on
 
 # When set to 'on', readline will try to enable the application keypad when
 # it is called. Some systems need this to enable the arrow keys.
@@ -50,7 +60,6 @@ set enable-keypad off
 # This variable, when set to 'on', says to display an asterisk ('*') at the
 # start of history lines which have been modified.
 set mark-modified-lines off
-
 
 # If set to On, completed names which are symbolic links to directories have a
 # slash appended (subject to the value of mark-directories).
