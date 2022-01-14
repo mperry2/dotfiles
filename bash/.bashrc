@@ -79,7 +79,16 @@ export LINES COLUMNS
 # Bash settings
 FUNCNEST=100               # Limit recursion in functions (in bash 4.2)
 IGNOREEOF=1                # Exit at the second EOF to prevent accidental logouts
-HISTFILE=~/.bash_hist      # Separate history file so it's not accidentally deleted
+
+# History settings
+# Create a directory for storing bash history files
+if [[ ! -d ~/.bash_hist ]]; then
+    mkdir ~/.bash_hist
+fi
+
+# Use a separate history file for each host so it's not accidentally deleted
+HISTFILE=~/.bash_hist/$(hostname --fqdn)
+
 HISTSIZE=-1                # Save all history
 HISTCONTROL=ignoreboth     # No history for duplicate cmds or cmds starting with space
 HISTTIMEFORMAT='[%F %T]  ' # Prepend the command's execution date to history
