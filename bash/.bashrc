@@ -248,13 +248,6 @@ fi
 # =============================================================================
 
 #
-# Bash completion
-#
-if [[ -r ~/.bash/bash_completion.sh ]]; then
-    source ~/.bash/bash_completion.sh
-fi
-
-#
 # Git completion
 #
 if git --version &>/dev/null; then
