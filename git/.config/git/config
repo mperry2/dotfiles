@@ -10,6 +10,8 @@
 	sslVerify = false
 [core]
 	pager = less -+c -FRX
+[pager]
+	status = true
 [push]
 	default = simple
 [alias]
