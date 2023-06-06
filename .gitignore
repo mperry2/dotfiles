@@ -1,2 +1,6 @@
 # Empty file used to check if first-run initialization has been completed.
 /.init
+
+# Ignore vim directory. It's usually added as another cloned repo, but we want
+# to avoid using submodules.
+/vim/
