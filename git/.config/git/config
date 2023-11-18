@@ -75,3 +75,5 @@
 #	branch = 119
 #	nobranch = 240
 #	unmerged = 125
+[include]
+	path = ~/.gitconfig-local
