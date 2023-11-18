@@ -22,6 +22,7 @@
 	df = diff
 	dfs = diff --staged
 	logg = log --graph --pretty=oneline --all --abbrev-commit --decorate
+	lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	log0 = log --first-parent -m
 	show0 = show --first-parent -m
 	blame0 = blame --first-parent -m
