@@ -6,8 +6,6 @@
 	signingkey = A1CA00C333704D88
 [commit]
 	gpgsign = true
-[http]
-	sslVerify = false
 [core]
 	pager = less -+c -FRX
 [pager]
