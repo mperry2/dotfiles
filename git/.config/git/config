@@ -24,6 +24,7 @@
 	log0 = log --first-parent -m
 	show0 = show --first-parent -m
 	blame0 = blame --first-parent -m
+	multipull = "!find . -mindepth 1 -maxdepth 2 -type d -name .git -exec echo -n 'Updating ' \\; -execdir pwd \\; -execdir git pull \\; -exec echo \\;"
 [status]
 	submoduleSummary = true
 [credential]
