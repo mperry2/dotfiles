@@ -197,6 +197,7 @@ STICKY_OTHER_WRITABLE   30;42            # dir that is sticky and other-writable
 
 TERM cygwin
 TERM xterm-256color
+TERM xterm-direct
 
 DIR     38;5;39     # directory
 LINK    38;5;123    # symbolic link (If you set this to 'target' instead of a
