@@ -40,6 +40,9 @@
 [status]
 	submoduleSummary = true
 
+[transfer]
+	fsckObjects = true
+
 [url "https://mperry2@github.com"]
 	insteadOf = https://github.com
 
