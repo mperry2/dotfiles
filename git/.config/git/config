@@ -40,6 +40,9 @@
 [status]
 	submoduleSummary = true
 
+[tag]
+	sort = version:refname
+
 [transfer]
 	fsckObjects = true
 
