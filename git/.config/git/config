@@ -37,6 +37,10 @@
 [push]
 	default = simple
 
+[rerere]
+	enabled = true
+	autoUpdate = true
+
 [status]
 	submoduleSummary = true
 
