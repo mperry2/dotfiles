@@ -8,6 +8,9 @@
 	br = branch
 	df = diff
 	dfs = diff --staged
+	amend = commit --amend --no-edit
+
+
 	logg = log --graph --pretty=oneline --all --abbrev-commit --decorate
 	lg = log --all --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
 	log0 = log --first-parent -m
