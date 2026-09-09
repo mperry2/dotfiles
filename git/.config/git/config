@@ -15,6 +15,10 @@
 	blame0 = blame --first-parent -m
 	multipull = "!find . -mindepth 1 -maxdepth 2 -type d -name .git -exec echo -n 'Updating ' \\; -execdir pwd \\; -execdir git pull \\; -exec echo \\;"
 
+[commit]
+	template = ~/.gitmessage
+	verbose = true
+
 [core]
 	autocrlf = false
 	eol = lf
