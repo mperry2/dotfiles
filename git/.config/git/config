@@ -23,6 +23,11 @@
 [credential]
 	helper = cache --timeout=28800
 
+[diff]
+	algorithm = histogram
+	colorMoved = default
+	mnemonicPrefix = true
+
 [fetch]
 	prune = true
 
