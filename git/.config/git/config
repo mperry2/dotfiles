@@ -16,6 +16,8 @@
 	multipull = "!find . -mindepth 1 -maxdepth 2 -type d -name .git -exec echo -n 'Updating ' \\; -execdir pwd \\; -execdir git pull \\; -exec echo \\;"
 
 [core]
+	autocrlf = false
+	eol = lf
 	pager = less -+c -FRX
 
 [credential]
