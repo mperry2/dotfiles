@@ -34,6 +34,9 @@
 [init]
 	defaultBranch = main
 
+[merge]
+	conflictStyle = zdiff3
+
 [pager]
 	status = true
 
