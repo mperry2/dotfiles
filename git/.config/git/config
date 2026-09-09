@@ -1,11 +1,6 @@
-# vim:noet:ts=8:sw=8
-
 [user]
-	name = Matt Perry
-	email = matt@mattperry.com
-	signingkey = A1CA00C333704D88
-[commit]
-	gpgsign = true
+	useConfigOnly = true
+
 [core]
 	pager = less -+c -FRX
 [pager]
