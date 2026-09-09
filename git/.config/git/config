@@ -1,12 +1,6 @@
 [user]
 	useConfigOnly = true
 
-[core]
-	pager = less -+c -FRX
-[pager]
-	status = true
-[push]
-	default = simple
 [alias]
 	st = status
 	co = checkout
@@ -20,10 +14,25 @@
 	show0 = show --first-parent -m
 	blame0 = blame --first-parent -m
 	multipull = "!find . -mindepth 1 -maxdepth 2 -type d -name .git -exec echo -n 'Updating ' \\; -execdir pwd \\; -execdir git pull \\; -exec echo \\;"
-[status]
-	submoduleSummary = true
+
+[core]
+	pager = less -+c -FRX
+
 [credential]
 	helper = cache --timeout=28800
+
+[fetch]
+	prune = true
+
+[pager]
+	status = true
+
+[push]
+	default = simple
+
+[status]
+	submoduleSummary = true
+
 [url "https://mperry2@github.com"]
 	insteadOf = https://github.com
 
@@ -71,5 +80,3 @@
 #	unmerged = 125
 [include]
 	path = ~/.gitconfig-local
-[fetch]
-	prune = true
